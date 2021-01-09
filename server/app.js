@@ -10,4 +10,4 @@ app.listen(PORT, () => {
 });
 
 // Creating /graphql route
-app.use("/graphql", graphqlHTTP({ schema }));
+app.use("/graphql", graphqlHTTP({ schema, graphiql: true }));
