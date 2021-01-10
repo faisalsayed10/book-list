@@ -3,6 +3,9 @@ const { graphqlHTTP } = require("express-graphql"); // Importing `express-graphq
 const schema = require("./schema/schema"); // Importing GraphQL schema
 const mongoose = require("mongoose");
 require("dotenv").config();
+const cors = require('cors')
+
+app.use(cors())
 
 const PORT = process.env.PORT;
 

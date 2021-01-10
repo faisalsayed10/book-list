@@ -1,12 +1,20 @@
-import "./App.css";
+import React from 'react'
+import BookList from './components/BookList'
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+
+const client = new ApolloClient({
+  uri: "http://localhost:4000/graphql",
+  cache: new InMemoryCache(),
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Learn React</h1>
-      </header>
-    </div>
+    <ApolloProvider client={client}>
+      <div className="App">
+        <h1>Book List</h1>
+        <BookList />
+      </div>
+    </ApolloProvider>
   );
 }
 
